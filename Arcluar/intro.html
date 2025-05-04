@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arcular</title>
+    <link rel="icon" href="./assests/Logo.png" type="image/png" />
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background: url('./assests/ARCinto.gif') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-shadow: 0 0 10px rgba(0,0,0,0.7);
+            position: relative;
+            padding-top: 80px;
+        }
+        .logo-img {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .home-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(270deg, #7b2ff7, #f107a3, #7b2ff7);
+            background-size: 600% 600%;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            user-select: none;
+            transition: background-color 0.3s ease;
+            animation: floatGradient 5s ease-in-out infinite alternate;
+            z-index: 10;
+        }
+        .home-button:hover {
+            background-color: rgba(123, 47, 247, 1);
+            background-image: none;
+        }
+        /* Categories Navigation */
+        .categories-nav {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px;
+            background: transparent;
+            animation: none;
+        }
+        .categories-nav li {
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+            user-select: none;
+            background: rgba(123, 47, 247, 0.85);
+            color: white;
+            font-weight: 600;
+            animation: none;
+        }
+        .categories-nav li:hover {
+            background: linear-gradient(135deg, #7b2ff7, #f107a3);
+            color: white;
+        }
+        .categories-nav li.coming-soon {
+            color: #aaa;
+            cursor: default;
+            font-style: italic;
+            background: none;
+            animation: none;
+        }
+        /* Remove "All" tab */
+        .categories-nav li[data-category="all"] {
+            display: none;
+        }
+        /* Slogan styles */
+        .slogan {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            max-width: 600px;
+            animation: fadeInOut 5s ease-in-out infinite;
+        }
+        .slogan small {
+            display: block;
+            margin-top: 10px;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #ccc;
+        }
+        /* Animations */
+        @keyframes floatGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="./assests/Logo.png" alt="Arcular Logo" class="logo-img" />
+    <a href="main.html" class="home-button" aria-label="Go to Home Page">Home</a>
+    <div class="slogan">
+        AI-Generated Wallpapers. Infinite Style. Free for All.
+        <small>Crafted by Arcluar · Curated by AI · Loved by You</small>
+    </div>
+    <ul class="categories-nav">
+        <li data-category="nature">Nature</li>
+        <li data-category="abstract">Abstract</li>
+        <li data-category="animals">Animals</li>
+        <li data-category="tech">Tech</li>
+        <li data-category="quotes">Quotes</li>
+        <li data-category="anime">Anime</li>
+        <li data-category="live-wallpapers" class="coming-soon">Live Wallpaper (Coming Soon)</li>
+    </ul>
+    <section class="wallpapers-section">
+        <div class="wallpapers-grid" id="wallpapersGrid">
+            <!-- Wallpapers will be dynamically inserted here -->
+        </div>
+        <div id="pagination" class="pagination"></div>
+    </section>
+    <script>
+        // Loop to show slogan and categories for 5 seconds then hide, repeat
+        const slogan = document.querySelector('.slogan');
+        const categories = document.querySelector('.categories-nav');
+        function toggleVisibility() {
+            slogan.style.display = slogan.style.display === 'none' ? 'block' : 'none';
+            categories.style.display = categories.style.display === 'none' ? 'flex' : 'none';
+        }
+        setInterval(toggleVisibility, 5000);
+    </script>
+</body>
+</html>

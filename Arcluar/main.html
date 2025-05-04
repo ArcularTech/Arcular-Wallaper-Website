@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arcular</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./assests/Logo.png" type="image/png" />
+</head>
+<body>
+    <div class="page-wrapper">
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="logo">
+            <img src="./assests/Logo.png" alt="Arcular Logo" class="logo-img" />
+            <span>Arcular</span>
+        </div>
+        <input type="text" id="searchInput" placeholder="Search wallpapers..." aria-label="Search wallpapers" />
+    </nav>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <h2>Categories</h2>
+        <div class="categories-grid">
+            <div class="category-card" data-category="nature">
+                <img src="./assests/nature.jpg" alt="Nature" />
+                <span>Nature</span>
+            </div>
+            <div class="category-card" data-category="abstract">
+                <img src="./assests/abs.jpg" alt="Abstract" />
+                <span>Abstract</span>
+            </div>
+            <div class="category-card" data-category="animals">
+                <img src="./assests/animal.jpg" alt="Animals" />
+                <span>Animals</span>
+            </div>
+            <div class="category-card" data-category="tech">
+                <img src="./assests/tech.jpg" alt="Tech" />
+                <span>Tech</span>
+            </div>
+            <div class="category-card" data-category="quotes">
+                <img src="./assests/quotes.jpg" alt="Quotes" />
+                <span>Quotes</span>
+            </div>
+            <div class="category-card" data-category="anime">
+                <img src="./assests/anime.jpg" alt="Anime" />
+                <span>Anime</span>
+            </div>
+            <div class="category-card" data-category="super-hero">
+                <img src="./assests/superhero.jpg" alt="Super Hero" />
+                <span>Super Hero</span>
+            </div>
+            <div class="category-card" data-category="sci-fi">
+                <img src="./assests/scifi.jpg" alt="Sci-Fi" />
+                <span>Sci-Fi</span>
+            </div>
+            <div class="category-card" data-category="desktop">
+                <img src="./assests/desktop.jpg" alt="Desktop" />
+                <span>Desktop</span>
+            </div>
+            <div class="category-card" data-category="laptop">
+                <img src="./assests/laptop.jpg" alt="Laptop" />
+                <span>Laptop</span>
+            </div>
+            <div class="category-card" data-category="mobile">
+                <img src="./assests/mobile.jpg" alt="Mobile" />
+                <span>Mobile</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <img src="assests/banner.png" alt="Featured Wallpaper" />
+        <div class="hero-text">
+            <h1>Discover Stunning Wallpapers</h1>
+            <p>Browse, choose categories, and download your favorite wallpapers for free.</p>
+        </div>
+    </section>
+
+    <!-- Wallpapers Grid -->
+    <section class="wallpapers-section">
+        <h2>Wallpapers</h2>
+        <div class="wallpapers-grid" id="wallpapersGrid">
+            <!-- Wallpapers will be dynamically inserted here -->
+        </div>
+        <div id="pagination" class="pagination"></div>
+    </section>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>Wallpapers on this site are AI-generated and free for personal use. Created using tools like OpenAI and other AI platforms.</p>
+        <p>© 2025 Arcular. Made by shovin_leo.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
